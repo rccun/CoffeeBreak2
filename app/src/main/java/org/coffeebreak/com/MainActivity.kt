@@ -9,17 +9,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import org.coffeebreak.com.ui.theme.MainTheme
-import org.coffeebreak.com.ui.theme.MyCoffeeBreakTheme
+import org.coffeebreak.com.login.LoginScreen
+import org.coffeebreak.com.signup.SignUpScreen
+import org.coffeebreak.com.startup.StartUpScreen
+import org.coffeebreak.com.theme.MainTheme
+import org.coffeebreak.com.theme.MyCoffeeBreakTheme
 import org.coffeebreak.com.welcome.WelcomeScreen
 
 @AndroidEntryPoint
@@ -30,28 +30,34 @@ class MainActivity() : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             MyCoffeeBreakTheme {
-                Surface(modifier = Modifier.fillMaxSize(), color = MainTheme.colorScheme.bg) {
-
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MainTheme.colorScheme.bg
+                ) {
                     Scaffold(
                         modifier = Modifier.fillMaxSize(),
-                        containerColor = Color.Companion.Transparent
+                        containerColor = Color.Transparent
                     ) { innerPadding ->
                         Box(modifier = Modifier.padding(innerPadding)) {
-
-                            NavHost(navController = navController, startDestination = Route.Welcome) {
+                            NavHost(
+                                navController, Route.Welcome
+                            ) {
                                 composable<Route.Welcome> {
-
+                                    WelcomeScreen(navController)
+                                }
+                                composable<Route.Login> {
+                                    LoginScreen(navController)
+                                }
+                                composable<Route.StartUp> {
+                                    StartUpScreen(navController)
+                                }
+                                composable<Route.SignUp> {
+                                    SignUpScreen(navController)
                                 }
                             }
-//                            NavHost(
-//                                navController = navController,
-//                                startDestination = Route.Welcome,
-//                            ) {
-//                                composable<Route.Welcome> {
-//                                    WelcomeScreen(navController)
-//                                }
-//                            }
+
                         }
+
                     }
                 }
             }

@@ -12,12 +12,11 @@ import androidx.compose.ui.res.vectorResource
 import androidx.navigation.NavController
 
 @Composable
-fun MyIcon(icon: Int, tintColor: Color? = null, modifier: Modifier = Modifier, onClick: () -> Unit) {
-    val t =  LocalContentColor.current
+fun MyIcon(icon: Int, tintColor: Color? = null, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
     Icon(
         imageVector = ImageVector.vectorResource(icon),
+        tint = tintColor ?: LocalContentColor.current,
         contentDescription = null,
-        tint = (tintColor ?: t) ,
         modifier = modifier.clickable{
             onClick()
         }
