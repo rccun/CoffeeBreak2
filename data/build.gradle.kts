@@ -48,7 +48,7 @@ dependencies {
     ksp(libs.room.compiler)
 
 
-    api(libs.supabase.compose.auth)
+//    api(libs.supabase.compose.auth)
     implementation(libs.supabase.auth)
     implementation(libs.supabase.postgrest)
     implementation(libs.supabase.storage)
@@ -58,6 +58,7 @@ dependencies {
 // Ktor
     implementation(libs.ktor.client.okhttp)
     implementation(libs.ktor.client.cio)
+//    implementation(libs.kotlinx.datetime)
 
 
     implementation(libs.androidx.core.ktx)

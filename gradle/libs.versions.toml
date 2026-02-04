@@ -17,7 +17,7 @@ ksp = "2.2.21-2.0.4"
 
 supabase = "2.5.1"
 supabase-compose = "3.2.2"
-ktor = "2.3.8"
+ktor = "3.4.0"
 
 ktorClient = "2.3.8"
 serialization = "1.9.0"
@@ -39,10 +39,11 @@ securityCrypto = "1.1.0-alpha06"
 
 
 zxing = "3.5.2"  # или "3.5.4" для последней версии
-kotlinx-datetime = "0.5.0"
+kotlinx-datetime = "0.6.1"
 
 
 [libraries]
+
 
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 zxing-core = { module = "com.google.zxing:core", version.ref = "zxing" }
@@ -73,10 +74,10 @@ supabase-storage = { module = "io.github.jan-tennert.supabase:storage-kt", versi
 supabase-realtime = { module = "io.github.jan-tennert.supabase:realtime-kt", version.ref = "supabase"  }
 
 
-ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 
 
 serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClient" }
 androidx-compose-ui-text = { group = "androidx.compose.ui", name = "ui-text", version.ref = "uiText" }
 
