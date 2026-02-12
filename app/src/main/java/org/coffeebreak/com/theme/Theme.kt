@@ -17,6 +17,10 @@ data class CustomColorTheme(
     val authTitle: Color = Color.Unspecified,
     val authDesc: Color = Color.Unspecified,
     val authText: Color = Color.Unspecified,
+    val authOtp: Color = Color.Unspecified,
+    val authTime: Color = Color.Unspecified,
+    val activeOtp: Color = Color.Unspecified,
+    val cafeBar: Color = Color.Unspecified,
 
 )
 
@@ -29,7 +33,11 @@ val LightColorScheme = CustomColorTheme(
     authBack = Color.Black,
     authTitle = green1,
     authDesc = blue3,
-    authText = green2
+    authText = green2,
+    authOtp = gray1,
+    authTime = blue3,
+    activeOtp = active,
+    cafeBar = bgW
 )
 val DarkColorScheme = CustomColorTheme(
     bg = bgB,
@@ -40,7 +48,11 @@ val DarkColorScheme = CustomColorTheme(
     authBack = b1,
     authTitle = b1,
     authDesc = b3,
-    authText = blue3
+    authText = blue3,
+    authOtp = gray2,
+    authTime = lightGray.copy(alpha = 0.5f),
+    activeOtp = lightBlue,
+    cafeBar = navMenu
 )
 
 val LocalColorProvider = staticCompositionLocalOf { CustomColorTheme() }

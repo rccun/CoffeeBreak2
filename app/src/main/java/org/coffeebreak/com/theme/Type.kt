@@ -1,6 +1,5 @@
 package org.coffeebreak.com.theme
 
-import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -14,6 +13,7 @@ data class MyTypo(
     val splashDesc2: TextStyle = TextStyle.Default,
     val authTextField: TextStyle = TextStyle.Default,
     val authTitle: TextStyle = TextStyle.Default,
+    val addressText: TextStyle = TextStyle.Default,
 )
 val fontR = FontFamily(
     Font(R.font.r_r, FontWeight.Normal)
@@ -46,5 +46,9 @@ val Typography = MyTypo(
     authTitle = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 22.sp
+    ),
+    addressText = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp
     ),
 )
