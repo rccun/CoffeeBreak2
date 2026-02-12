@@ -15,7 +15,7 @@ import javax.inject.Inject
 class WelcomeViewModel @Inject constructor(): ViewModel() {
     private val _isTimeOut = MutableStateFlow<Boolean>(false)
     val isTimeOut = _isTimeOut.onStart {
-        delay(5000)
+        delay(1500)
         _isTimeOut.update { true }
 
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)

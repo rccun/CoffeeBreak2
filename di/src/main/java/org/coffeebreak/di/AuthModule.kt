@@ -10,6 +10,7 @@ import org.coffeebreak.domain.repository.AuthRepository
 import org.coffeebreak.domain.repository.SessionRepository
 import org.coffeebreak.domain.usecases.auth.EmailUseCase
 import org.coffeebreak.domain.usecases.auth.PasswordUseCase
+import org.coffeebreak.domain.usecases.auth.SetPasswordUseCase
 import org.coffeebreak.domain.usecases.auth.SignInUseCase
 import org.coffeebreak.domain.usecases.auth.SignUpUseCase
 import org.coffeebreak.domain.usecases.auth.ValidateUseCase
@@ -48,4 +49,8 @@ object AuthModule {
     @Provides
     @Singleton
     fun providePasswordUseCase() = PasswordUseCase()
+
+    @Provides
+    @Singleton
+    fun provideSetPasswordUseCase(repo: AuthRepository) = SetPasswordUseCase(repo)
 }

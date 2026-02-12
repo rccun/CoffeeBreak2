@@ -48,6 +48,7 @@ dependencies {
     ksp(libs.room.compiler)
 
 
+    implementation(libs.supabase.compose.auth)
 //    api(libs.supabase.compose.auth)
     implementation(libs.supabase.auth)
     implementation(libs.supabase.postgrest)

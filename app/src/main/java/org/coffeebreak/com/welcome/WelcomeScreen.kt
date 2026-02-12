@@ -20,7 +20,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -30,9 +29,7 @@ import androidx.navigation.NavController
 import org.coffeebreak.com.R
 import org.coffeebreak.com.Route
 import org.coffeebreak.com.common.MyFAB
-import org.coffeebreak.com.common.MyIcon
 import org.coffeebreak.com.theme.MainTheme
-import org.coffeebreak.com.theme.bgW
 import org.coffeebreak.com.theme.green1
 import org.coffeebreak.com.theme.lightGray
 

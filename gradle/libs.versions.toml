@@ -15,11 +15,11 @@ navigationCompose = "2.9.6"
 
 ksp = "2.2.21-2.0.4"
 
-supabase = "2.5.1"
-supabase-compose = "3.2.2"
+supabase = "3.3.0"
+supabase-compose = "3.3.0"
 ktor = "3.4.0"
 
-ktorClient = "2.3.8"
+#ktorClient = "2.3.8"
 serialization = "1.9.0"
 serializable = "2.2.0"
 
@@ -67,8 +67,8 @@ room = { module = "androidx.room:room-ktx", version.ref = "room"}
 room-compiler = {module = "androidx.room:room-compiler", version.ref = "room"}
 
 # Supabase modules
-supabase-auth = { module = "io.github.jan-tennert.supabase:gotrue-kt", version.ref = "supabase"  }
-supabase-compose-auth = { module = "io.github.jan-tennert.supabase:compose-auth", version.ref = "supabase-compose"  }
+supabase-auth = { module = "io.github.jan-tennert.supabase:auth-kt", version.ref = "supabase"  }
+supabase-compose-auth = { module = "io.github.jan-tennert.supabase:compose-auth", version.ref = "supabase"  }
 supabase-postgrest = { module = "io.github.jan-tennert.supabase:postgrest-kt", version.ref = "supabase"  }
 supabase-storage = { module = "io.github.jan-tennert.supabase:storage-kt", version.ref = "supabase"  }
 supabase-realtime = { module = "io.github.jan-tennert.supabase:realtime-kt", version.ref = "supabase"  }
@@ -78,7 +78,7 @@ supabase-realtime = { module = "io.github.jan-tennert.supabase:realtime-kt", ver
 
 serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
-ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClient" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 androidx-compose-ui-text = { group = "androidx.compose.ui", name = "ui-text", version.ref = "uiText" }
 
 

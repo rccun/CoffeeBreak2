@@ -4,7 +4,6 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.internal.lifecycle.HiltViewModelMap
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,7 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val signInUseCase: SignInUseCase,
-    private val validateUseCase: ValidateUseCase
+    private val validateUseCase: ValidateUseCase,
 ): ViewModel() {
     private  val _state = mutableStateOf(LoginState())
     val state: State<LoginState> = _state
@@ -46,7 +45,7 @@ class LoginViewModel @Inject constructor(
                             } else {
                                 _state.value = _state.value.copy (
                                     isError = true,
-                                    errorMessage = res.exceptionOrNull()!!.message!!
+                                    errorMessage = res.exceptionOrNull()?.message?: "Unknown error"
                                 )
                             }
                         }

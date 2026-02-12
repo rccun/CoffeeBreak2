@@ -1,7 +1,6 @@
 package org.coffeebreak.com
 
 import kotlinx.serialization.Serializable
-import java.io.Serial
 
 @Serializable
 sealed class Route() {
@@ -10,4 +9,8 @@ sealed class Route() {
     @Serializable data object SignUp: Route()
     @Serializable data object CafeMap: Route()
     @Serializable data object StartUp: Route()
+    @Serializable data object TwoFactor: Route()
+    @Serializable data object Reset: Route()
+    @Serializable data object Forgot: Route()
+    @Serializable data class Menu(val id: String? = null): Route()
 }

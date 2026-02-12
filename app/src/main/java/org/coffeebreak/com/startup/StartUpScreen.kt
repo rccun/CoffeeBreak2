@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -28,13 +29,15 @@ fun StartUpScreen(navController: NavController, viewModel: StartUpViewModel = hi
             navController.navigate(Route.Login)
         }
     }
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(blue3.copy(alpha = 0.86f))
-    ) {
+    Box(modifier = Modifier.fillMaxSize()) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(blue3.copy(alpha = 0.86f))
+        ) {
+        }
         Image(painter = painterResource(R.drawable.startup), null)
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
             Spacer(Modifier.weight(3.5f))
             Image(painter = painterResource(R.drawable.cup), null)
             Spacer(Modifier.weight(1f))
@@ -42,5 +45,6 @@ fun StartUpScreen(navController: NavController, viewModel: StartUpViewModel = hi
             Spacer(Modifier.weight(4f))
 
         }
+
     }
 }

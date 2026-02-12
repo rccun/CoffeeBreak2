@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -20,7 +21,6 @@ import org.coffeebreak.com.Route
 import org.coffeebreak.com.common.AuthTextField
 import org.coffeebreak.com.common.MyFAB
 import org.coffeebreak.com.common.MyIcon
-import org.coffeebreak.com.login.LoginEvents
 import org.coffeebreak.com.theme.MainTheme
 import org.coffeebreak.com.theme.blue3
 import org.coffeebreak.com.theme.lightGray
@@ -28,11 +28,16 @@ import org.coffeebreak.com.theme.lightGray
 @Composable
 fun SignUpScreen(navController: NavController, viewModel: SignUpViewModel = hiltViewModel()) {
     val state = viewModel.state.value
+    LaunchedEffect(state.isSuccess) {
+        if (state.isSuccess) {
+            navController.navigate(Route.CafeMap)
+        }
+    }
     Column(modifier = Modifier.padding(start = 30.dp, top = 26.dp)) {
         MyIcon(icon = R.drawable.back, tintColor = MainTheme.colorScheme.authBack) {
             navController.popBackStack()
         }
-        Column(modifier = Modifier.padding(horizontal = 10.dp)) {
+        Column(modifier = Modifier.padding(start = 10.dp, end = 40.dp)) {
             Spacer(Modifier.weight(1f))
             Text(
                 "Зарегистрироваться",

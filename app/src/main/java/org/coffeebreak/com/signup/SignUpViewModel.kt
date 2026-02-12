@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.coffeebreak.domain.model.UserModel
 import org.coffeebreak.domain.usecases.auth.SignUpUseCase
 import org.coffeebreak.domain.usecases.auth.ValidateUseCase
 import javax.inject.Inject
@@ -61,7 +62,7 @@ class SignUpViewModel @Inject constructor(
                         viewModelScope.launch(Dispatchers.IO) {
 
                             val res2 =
-                                signUpUseCase.execute(_state.value.email, _state.value.password)
+                                signUpUseCase.execute(_state.value.email, _state.value.password, _state.value.name, _state.value.phone)
                             if (res2.isSuccess) {
                                 _state.value = _state.value.copy(
                                     isSuccess = true
