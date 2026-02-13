@@ -49,6 +49,7 @@ import com.yandex.mapkit.map.CameraPosition
 import com.yandex.mapkit.mapview.MapView
 import com.yandex.runtime.image.ImageProvider
 import org.coffeebreak.com.R
+import org.coffeebreak.com.Route
 import org.coffeebreak.com.common.MyFAB
 import org.coffeebreak.com.common.MyIcon
 import org.coffeebreak.com.theme.MainTheme
@@ -173,6 +174,7 @@ fun CafeMapScreen(navController: NavController, viewModel: CafeMapViewModel = hi
                                         .padding(13.dp)
                                         .clickable {
                                             viewModel.saveAddress(i.address)
+                                            navController.navigate(Route.Menu())
                                         },
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
@@ -238,7 +240,7 @@ fun GetPermission(action: () -> Unit) {
 fun openSettings(context: Context) {
     val intent = Intent(
         Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-        Uri.fromParts("pacakage", context.packageName, null)
+        Uri.fromParts("package", context.packageName, null)
     )
     intent.addFlags(
         Intent.FLAG_ACTIVITY_NEW_TASK

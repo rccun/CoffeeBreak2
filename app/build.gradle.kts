@@ -49,6 +49,9 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":di"))
 
+    implementation(libs.qr.code)
+
+
 
     implementation(libs.hilt.navigation)
     implementation(libs.hilt.android)

@@ -5,5 +5,6 @@ data class UserModel(
     val userId: String? = null,
     val name: String,
     val phone: String,
-    val address: String? = null
+    val address: String? = null,
+    val email: String
 )

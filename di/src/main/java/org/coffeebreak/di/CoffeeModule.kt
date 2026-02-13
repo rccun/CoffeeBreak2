@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import org.coffeebreak.data.repository.CoffeeRepositoryImpl
 import org.coffeebreak.domain.repository.CoffeeRepository
 import org.coffeebreak.domain.usecases.coffee.GetCafesUseCase
+import org.coffeebreak.domain.usecases.coffee.GetCoffeesUseCase
 import javax.inject.Singleton
 
 @Module
@@ -19,5 +20,8 @@ object CoffeeModule {
     @Provides
     @Singleton
     fun provideGetCafesUseCase(repo: CoffeeRepository) = GetCafesUseCase(repo)
+    @Provides
+    @Singleton
+    fun provideGetCoffeesUseCase(repo: CoffeeRepository) = GetCoffeesUseCase(repo)
 
 }

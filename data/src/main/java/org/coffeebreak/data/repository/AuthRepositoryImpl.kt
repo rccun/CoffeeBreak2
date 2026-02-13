@@ -75,6 +75,7 @@ class AuthRepositoryImpl(
                         userId = it.id,
                         name = name,
                         phone = phone,
+                        email = email
                     )
 //                    mapOf(
 //                        "user_id" to it.id,

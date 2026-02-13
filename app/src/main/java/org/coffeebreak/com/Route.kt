@@ -13,4 +13,10 @@ sealed class Route() {
     @Serializable data object Reset: Route()
     @Serializable data object Forgot: Route()
     @Serializable data class Menu(val id: String? = null): Route()
+    @Serializable data object Reward: Route()
+    @Serializable data object MyOrder: Route()
+    @Serializable data object Profile: Route()
+    @Serializable data object CreateOrder: Route()
+    @Serializable data object QR: Route()
+
 }
