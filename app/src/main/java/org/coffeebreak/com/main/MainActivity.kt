@@ -59,7 +59,7 @@ class MainActivity() : ComponentActivity() {
                             NavHost(
                                 navController,
                                 if (isAuth) {
-                                    Route.Reward
+                                    Route.StartUp
                                 } else {
                                     Route.Login
                                 }
