@@ -6,6 +6,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import org.coffeebreak.com.common.CustomIcon
 
 data class CustomColorTheme(
     val bg: Color = Color.Unspecified,
@@ -21,6 +22,16 @@ data class CustomColorTheme(
     val authTime: Color = Color.Unspecified,
     val activeOtp: Color = Color.Unspecified,
     val cafeBar: Color = Color.Unspecified,
+    val bottomActiveIcon: Color = Color.Unspecified,
+    val menuBg: Color = Color.Unspecified,
+    val menuTitle: Color = Color.Unspecified,
+    val menuName: Color = Color.Unspecified,
+    val icon: Color = Color.Unspecified,
+    val menuTitle2: Color = Color.Unspecified,
+    val profileBox: Color = Color.Unspecified,
+    val profileText: Color = Color.Unspecified,
+    val iconBack: Color = Color.Unspecified,
+    val windowTitle: Color = Color.Unspecified,
 
 )
 
@@ -28,7 +39,7 @@ val LightColorScheme = CustomColorTheme(
     bg = bgW,
     default = Color.Black,
     splashBox = bgW.copy(alpha = 0.2f),
-    splashDesc = darkBlue,
+    splashDesc = darkBlue2,
     authLeadingIcon = green2,
     authBack = Color.Black,
     authTitle = green1,
@@ -37,7 +48,17 @@ val LightColorScheme = CustomColorTheme(
     authOtp = gray1,
     authTime = blue3,
     activeOtp = active,
-    cafeBar = bgW
+    cafeBar = bgW,
+    bottomActiveIcon = blue3,
+    menuBg = navMenu,
+    menuTitle = b3,
+    menuName = b1,
+    icon = darkBlue,
+    menuTitle2 = b2,
+    profileBox = gray4,
+    profileText = blue3,
+    iconBack = Color.Black,
+    windowTitle = darkBlue
 )
 val DarkColorScheme = CustomColorTheme(
     bg = bgB,
@@ -52,7 +73,18 @@ val DarkColorScheme = CustomColorTheme(
     authOtp = gray2,
     authTime = lightGray.copy(alpha = 0.5f),
     activeOtp = lightBlue,
-    cafeBar = navMenu
+    cafeBar = navMenu,
+    bottomActiveIcon = b1,
+    menuBg = bg,
+    menuTitle = gray3,
+    menuName = b2,
+    icon = b1,
+    menuTitle2 = gray3,
+    profileBox = gray5,
+    profileText = lightGray,
+    iconBack = b1,
+    windowTitle = b2
+
 )
 
 val LocalColorProvider = staticCompositionLocalOf { CustomColorTheme() }

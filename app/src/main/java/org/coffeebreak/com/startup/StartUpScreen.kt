@@ -26,7 +26,7 @@ fun StartUpScreen(navController: NavController, viewModel: StartUpViewModel = hi
     val isTimeOut = viewModel.isTimeOut.collectAsState().value
     LaunchedEffect(isTimeOut) {
         if (isTimeOut) {
-            navController.navigate(Route.Login)
+            navController.navigate(Route.CafeMap)
         }
     }
     Box(modifier = Modifier.fillMaxSize()) {
