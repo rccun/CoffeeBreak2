@@ -15,7 +15,7 @@ class SecureStorageImpl(context: Context): SecureStorage {
         EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
     )
     override suspend fun loadSession(): SessionModel? {
-        val userId = prefs.getString("user_id", "")?: return null
+        val userId = prefs.getString("user_id", null)?: return null
         return SessionModel(
             id = userId,
             accessToken = prefs.getString("access_token", "")?: "",
