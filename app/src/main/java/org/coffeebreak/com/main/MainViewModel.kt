@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val getSessionUseCase: GetSessionUseCase
-): ViewModel() {
+) : ViewModel() {
     private val _isAuth = MutableStateFlow(false)
     val isAuth = _isAuth.onStart {
         viewModelScope.launch(Dispatchers.IO) {
@@ -26,6 +26,7 @@ class MainViewModel @Inject constructor(
             }
 
         }
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false
+    }.stateIn(
+        viewModelScope, SharingStarted.WhileSubscribed(5000), false
     )
 }

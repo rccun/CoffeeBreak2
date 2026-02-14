@@ -1,5 +1,6 @@
 package org.coffeebreak.com.reward
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -11,25 +12,42 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import org.coffeebreak.com.Route
+import org.coffeebreak.com.common.BottomBar
 import org.coffeebreak.com.common.LoyaltyCard
 import org.coffeebreak.com.common.PointsCard
 import org.coffeebreak.com.theme.MainTheme
 
 @Composable
 fun RewardScreen(navController: NavController) {
-    Column(modifier = Modifier.padding(horizontal = 25.dp)) {
-        Spacer(Modifier.height(21.dp))
-        Text(
-            "Вознаграждение",
-            color = MainTheme.colorScheme.windowTitle,
-            style = MainTheme.typography.authTextField,
-            fontSize = 16.sp,
-            modifier = Modifier.align(Alignment.CenterHorizontally)
-        )
-        Spacer(Modifier.height(31.dp))
+    Box() {
+        Column(modifier = Modifier.padding(horizontal = 25.dp)) {
+            Spacer(Modifier.height(21.dp))
+            Text(
+                "Вознаграждение",
+                color = MainTheme.colorScheme.windowTitle,
+                style = MainTheme.typography.authTextField,
+                fontSize = 16.sp,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+            Spacer(Modifier.height(31.dp))
 
-        LoyaltyCard(5)
-        Spacer(Modifier.height(24.dp))
-        PointsCard()
+            LoyaltyCard(5)
+            Spacer(Modifier.height(24.dp))
+            PointsCard()
+            Spacer(Modifier.weight(1f))
+        }
+        Column(
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(horizontal = 25.dp)
+        ) {
+
+            BottomBar(
+                navController,
+                Route.Reward
+            )
+            Spacer(Modifier.height(18.dp))
+        }
     }
 }
